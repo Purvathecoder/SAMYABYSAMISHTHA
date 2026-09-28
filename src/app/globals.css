@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf6ec;
+  --foreground: #123832;
+
+  --color-cream: #fbf6ec;
+  --color-cream-dark: #f2e6cd;
+  --color-teal-950: #08211d;
+  --color-teal-900: #0d3b36;
+  --color-teal-800: #123832;
+  --color-teal-700: #1a4f47;
+  --color-teal-600: #226359;
+  --color-gold-50: #fbf3df;
+  --color-gold-100: #f3e2b6;
+  --color-gold-400: #cda454;
+  --color-gold-500: #c9a24b;
+  --color-gold-600: #a97f2f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-jost);
+
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-teal-950: var(--color-teal-950);
+  --color-teal-900: var(--color-teal-900);
+  --color-teal-800: var(--color-teal-800);
+  --color-teal-700: var(--color-teal-700);
+  --color-teal-600: var(--color-teal-600);
+  --color-gold-50: var(--color-gold-50);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jost), Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-gold-400);
+  color: var(--color-teal-950);
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.input-field {
+  width: 100%;
+  border: 1px solid rgba(18, 56, 50, 0.2);
+  background: transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-teal-900);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.input-field::placeholder {
+  color: rgba(18, 56, 50, 0.4);
+}
+.input-field:focus {
+  border-color: var(--color-gold-500);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+}
